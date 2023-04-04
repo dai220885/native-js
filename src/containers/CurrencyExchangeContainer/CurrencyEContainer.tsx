@@ -9,7 +9,7 @@ import {
     CurrencyReducerActionsTypes
 } from '../../redux/actions';
 import { connect, ConnectedProps } from 'react-redux';
-import {IGlobalState} from '../../redux/state';
+import {RootStateType} from '../../redux/state';
 
 const CurrencyEContainer: React.FC<TProps> = props => {
 
@@ -81,7 +81,7 @@ const CurrencyEContainer: React.FC<TProps> = props => {
 // const mapStateToProps = ( { currency } : {currency: CurrencyState} ): CurrencyState => {
 
 //изменил тип приходящего стейта:
-const mapStateToProps = ( state : IGlobalState): CurrencyState => {
+const mapStateToProps = ( state : RootStateType): CurrencyState => {
 
 
     return {
@@ -117,5 +117,5 @@ type TProps = ConnectedProps<typeof connector>;
 
 export default connector(CurrencyEContainer);
 
-export const ContainerRoot = connector(CurrencyEContainer);
+//export const ContainerRoot = connector(CurrencyEContainer);
 
